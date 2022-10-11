@@ -40,9 +40,12 @@ const play = function fun2(){
     let span = document.querySelector('#result-game');
     span.innerHTML = 'Dado player: ' + player + ' Dado pc: ' + pc;
     if(player == pc){
-        span.innerHTML += ' Hai Vinto';
-    }else{
-        span.innerHTML += ' Hai Perso';
+        span.innerHTML += ' Pareggio!';
+    }else if(player > pc){
+        span.innerHTML += ' Hai Vinto!';
+    }
+    else{
+        span.innerHTML += ' Hai Perso!';
     }
 }
 btn2.addEventListener('click', play);
