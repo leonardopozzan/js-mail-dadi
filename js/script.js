@@ -9,7 +9,6 @@
 const mailValide = ['user1@gmail.com', 'user2@gmail.com', 'user3@gmail.com', 'user4@gmail.com', 'user5@gmail.com'];
 const btn = document.querySelector('#send-mail');
 
-
 const valid = function fun1() {
     let check = false;
     let span = document.querySelector('#result');
@@ -39,10 +38,11 @@ const play = function fun2(){
     const player = Math.floor(Math.random() * (max - min) ) + min;
     const pc = Math.floor(Math.random() * (max - min) ) + min;
     let span = document.querySelector('#result-game');
+    span.innerHTML = 'Dado player: ' + player + ' Dado pc: ' + pc;
     if(player == pc){
-        span.innerHTML = 'Dado player: ' + player + ' Dado pc: ' + pc + ' Hai Vinto';
+        span.innerHTML += ' Hai Vinto';
     }else{
-        span.innerHTML = 'Dado player: ' + player + ' Dado pc: ' + pc + ' Hai Perso';
+        span.innerHTML += ' Hai Perso';
     }
 }
 btn2.addEventListener('click', play);
