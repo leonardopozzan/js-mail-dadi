@@ -3,7 +3,76 @@
     padding: 0;
     box-sizing: border-box;
 }
-.my-container{
-    max-width: 1000px;
-    margin: auto;
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
 }
+/* pagina di accedi*/
+.accedi{
+    background-clip: url('../video/waves.mov');
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* color: white; */
+    position: relative;
+}
+.accedi .box_login{
+    width: 550px;
+    height: 400px;
+    background-color:  transparent; 
+    border-radius: 10px;
+}
+/* #23272A */
+.accedi .flex_login{
+    display: flex;
+}
+
+/* box login di sinistra */
+.accedi .flex_login .left_accedi{
+    width: 100%;
+    /* color: gray; */
+    padding: 20px 40px 40px;
+}
+.left_accedi h1{
+    text-align: center;
+    font-size: 35px;
+}
+.left_accedi .user_name{
+    font-size: 14px;
+    font-weight: bold;
+}
+.left_accedi span{
+    color: red;
+    font-size: 18px;
+}
+.left_accedi input{
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    border: 0;
+    color: white;
+    font-size: 20px;
+}
+.left_accedi [class*=my-btn]{
+    text-align: center;
+    color: white;
+    background-color:  black;/*#255EE9*/
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.left_accedi .my-btn2{
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+    padding: 10px;
+}
+#result{
+    height: 40px;
+
+}
+
