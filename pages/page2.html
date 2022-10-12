@@ -4,14 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style2.css">
     <title>Gioca a Dadi</title>
 </head>
 <body>
-    <div class="my-container mt-5">
-        <input type="button" id="throw" value="Lancia i dadi">
-        <span id="result-game"></span>
-    </div>
+    
+
+    <header>
+        <h1>
+            <i class="fa-solid fa-dice me-2"></i> Roll the Dice! <i class="fa-solid fa-dice me-2"></i>
+        </h1>
+        <div class="mt-5 mb-3 fs-5">
+            <label for="">Number of Players</label>
+            <input type="number" id="numbPlayers">
+            <label for="">Number of Dice</label>
+            <input type="number" id="numbDice">
+            <label for="">Number of Dice's Faces</label>
+            <input type="number" id="numbFaces">
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="flex-grow-1"><input type="button" id="play" value="Play!" class="btn btn-dark p-3 fs-5"></div>
+            <div><a href="../index.html" class="btn btn-light">Back to e-mail</a></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrapper">
+            <div id="winners">
+            </div>
+            <div id="players-container">
+            </div>
+        </div>
+    </main>
 
     <script src="../js/script2.js"></script>
 </body>
