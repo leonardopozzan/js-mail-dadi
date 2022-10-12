@@ -10,6 +10,7 @@ const play = function play(){
 btn.addEventListener('click' , play);
 
 function rolleDice(numbPlayers, numbDice, numbFaces){
+    numbFaces++;
     const minNumb = 1;
     let players = [];
     const divContainer = document.querySelector('#players-container')
