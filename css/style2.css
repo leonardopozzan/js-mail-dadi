@@ -12,7 +12,7 @@ header{
     width: 1000px;
     margin: auto;
 }
-#winners{
+.winners{
     margin-top: 50px;
     font-size: 45px;
     font-weight: bold;
