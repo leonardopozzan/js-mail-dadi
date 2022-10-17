@@ -1,45 +1,98 @@
+/********************* Utility **********************/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-header{
-    background-color: gray;
-    padding: 20px;
-    text-align: center;
+:root{
+    --color-1: #618685;
+    --color-2: #3dc4d3;
+    /* --color-2: #80ced6; */
+    --color-3: #fdf6a3;
+    --color-4: #d5f4e6;
+    --color-5: #ffd558;
+    --color-6: #fefbd8;
+
 }
-.wrapper{
-    width: 1000px;
+
+/********************* Header **********************/
+header{
+    background-color: var(--color-1);
+    padding: 1rem;
+    color: white;
+    height: 200px;
+}
+header h1{
+    color: var(--color-5);
+}
+header .my-input{
+    max-width: 900px;
     margin: auto;
 }
+header .btn-play{
+    background-color: var(--color-5);
+    border: 0;
+    padding: 0;
+    border-radius: 10px;
+}
+.home{
+    position: absolute;
+    bottom: 10px; right:20px;
+}
+
+/********************* Sezione statistiche **********************/
+.stats{
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: var(--color-1);
+    color: white;
+    padding: 0 1rem 1rem;
+    height: calc(100vh - 200px);
+}
+.title-stats{
+    font-size: 2.8rem;
+    color: var(--color-5);
+    margin-bottom: 2rem;
+}
+.inner-stats{
+    height: 75%;
+    overflow: auto;
+}
+
+/********************* Sezione del gioco **********************/
+.the-game{
+    padding-top: 3rem;
+    background-color: var(--color-2);
+    height: calc(100vh - 200px);
+    overflow: auto;
+}
 .winners{
-    margin-top: 50px;
-    font-size: 45px;
+    font-size: 2.8rem;
     font-weight: bold;
     font-style: italic;
     text-align: center;
-    color: blue;
+    color: var(--color-3);
 }
 .players{
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -20px;
 }
 .player{
-    width: calc(100% / 3 - 40px);
-    margin: 20px;
+    width: calc(100% / 2);
+    padding: 1.3rem;
 }
 .name-player{
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: bold;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-1)
 }
 .score-player{
-    font-size: 25px;
+    font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 40px;
-    color: grey;
+    margin-bottom: 2.5rem;
+    color: var(--color-3);
 }
 .dice-player{
     width: 60px;
@@ -47,10 +100,11 @@ header{
     line-height: 50px;
     text-align: center;
     border-radius: 10px;
-    border: 5px solid red;
+    color: var(--color-4);
+    border: 5px solid var(--color-4);
     display: inline-block;
     font-weight: bold;
-    font-size: 25px;
-    margin-bottom: 10px;
-    margin-right: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
 }

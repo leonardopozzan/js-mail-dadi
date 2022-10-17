@@ -6,14 +6,15 @@ const play = function play(){
     const numbFaces = parseInt(document.querySelector('#numbFaces').value);
     rolleDice(numbPlayers, numbDice, numbFaces);
     // debug
-    // rolleDice(3, 3, 6)
+    // const players = rolleDice(12, 12, 12);
+
 }
 
 btn.addEventListener('click' , play);
 
 function rolleDice(numbPlayers, numbDice, numbFaces){
     //prendo e pulisco il contenitore generale
-    const wrapper = document.querySelector('.wrapper');
+    const wrapper = document.querySelector('.the-game');
     wrapper.innerHTML = '';
 
     //creo il contenitore dove scrivo i vincitori
@@ -70,11 +71,9 @@ function rolleDice(numbPlayers, numbDice, numbFaces){
     const indexOfPlayer = indexOfMaxArray(scores);
 
     //Stampo i vincitori sull'html col relativo highscore
-    divWinners.innerHTML = 'High Score: ' + highScore + '&nbsp;'+ '&nbsp;'+ '&nbsp;'+ '&nbsp;'+ '&nbsp;';
-    if (indexOfPlayer.length == 0){
-        divWinners.innerHTML += (' Player: No Player entered');
-    }else if (indexOfPlayer.length == 1){
-        divWinners.innerHTML += (' Player ' + (indexOfPlayer[0]+1) + ' Won');
+    const spaces = '<br>';
+    if (indexOfPlayer.length == 1){
+        divWinners.innerHTML = ' Player ' + (indexOfPlayer[0]+1) + ' Won' + spaces;
     }else{
         let message = 'Players:'
         for(let i = 0; i < indexOfPlayer.length; i++){
@@ -85,9 +84,78 @@ function rolleDice(numbPlayers, numbDice, numbFaces){
             }
         }
         message += 'Won'
-        divWinners.innerHTML += message;
+        divWinners.innerHTML = message + spaces;
     }
+    divWinners.innerHTML += 'High Score: ' + highScore;
+
+    statsDice(scores, players)
 }
 
+function statsDice(scores, players){
+    //prendo e pulisco il div delle statistiche
+    const stats = document.querySelector('.inner-stats');
+    stats.innerHTML = '';
 
+    //calcolo i numeri usciti più frequentemente
+    //creo una lista di tutti i numeri usciti
+    let allNumbers = [];
+    for (let i = 0; i < players.length; i++){
+        for (let j = 0; j < players[i].length; j++){
+            allNumbers.push(players[i][j]);
+        }
+    }
+
+    //IL CALCOLO SEGUENTE è STATO IL PUNTO PIù DIFFICILE!!
+
+    //creo la lista dei numeri più frequenti e la printo nell'html
+    let numbersMaxCount = [];
+    let maxCount = 0;
+    for (let i = 0; i < allNumbers.length; i++){
+        let currentCount = 0;
+        for (let j = 0; j < allNumbers.length; j++){
+            //scorro solo indici superiori a "i" in modo da esser sicuro di
+            //non aggiungere più volte lo stesso elemento alla lista dei
+            //numeri frequenti
+            if( j >= i){
+                if (allNumbers[i] == allNumbers[j]){
+                    currentCount++;
+                    //qui salvo eventuali numeri che hanno la stessa frequanza
+                    if(currentCount == maxCount){
+                        numbersMaxCount.push(allNumbers[i]);
+                    }
+                }
+                //se trovo un nuovo massimo aggiorno il contatore massimo e
+                //resetto la lista degli elementi più frequenti
+                if (currentCount > maxCount){
+                    maxCount = currentCount;
+                    numbersMaxCount = [];
+                    numbersMaxCount.push(allNumbers[i]);
+                }
+            }
+            
+        }
+    }
+    const divFrequentNumber = addElementClassHTML('div', '', stats);
+    divFrequentNumber.innerHTML = `Most frequent numbers: ${numbersMaxCount.toString()}`
+    const divFrequency = addElementClassHTML('div', '', stats);
+    divFrequency.innerHTML = `Frequency: ${maxCount}`
+
+
+    //calcolo la media dei punteggi totali e la printo in HTML
+    const sumPlayers = sumArray(scores)
+    const totalAverage = (sumPlayers / scores.length).toFixed(2);
+    const divTotalAverage = addElementClassHTML('div', '', stats);
+    divTotalAverage.innerHTML = `Average total scores: ${totalAverage}`
+
+    //calcolo la media dei punteggi di ogni player e la printo in HTML
+    let sumPlayer = [];
+    for(let i = 0; i < scores.length; i++){
+        sumPlayer.push((scores[i] / players[i].length).toFixed(2));
+    }
+    for(let i = 0; i < sumPlayer.length; i++){
+        const divPlayerAverage = addElementClassHTML('div', '', stats);
+        divPlayerAverage.innerHTML = `Average player${i+1} score: ${sumPlayer[i]}`
+    }
+
+}
 

@@ -12,27 +12,170 @@
 <body>
     
 
-    <header>
-        <h1>
+    <header class="position-relative">
+        <h1 class="text-center">
             <i class="fa-solid fa-dice me-2"></i> Roll the Dice! <i class="fa-solid fa-dice me-2"></i>
         </h1>
-        <div class="mt-5 mb-3 fs-5">
-            <label for="">Number of Players</label>
-            <input type="number" id="numbPlayers">
-            <label for="">Number of Dice</label>
-            <input type="number" id="numbDice">
-            <label for="">Number of Dice's Faces</label>
-            <input type="number" id="numbFaces">
+
+        <div class="my-input mt-4 mb-3 fs-5">
+            <div class="row mb-2 gx-3">
+                <label for="" class="col-3">Number of Players</label>
+                <input type="number" id="numbPlayers" class="col-3">
+                <label for="" class="col-3">Number of Dice</label>
+                <input type="number" id="numbDice" class="col-3">
+            </div>
+            <div class="row gx-3">
+                <label for="" class="col-3">Number of Dice's Faces</label>
+                <input type="number" id="numbFaces" class="col-3">
+                <div class="col-3"></div>
+                <input type="button" id="play" value="Play!" class="btn-play fs-5 col-3">
+            </div>
         </div>
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="flex-grow-1"><input type="button" id="play" value="Play!" class="btn btn-dark p-3 fs-5"></div>
-            <div><a href="../index.html" class="btn btn-light">Back to e-mail</a></div>
-        </div>
+        <div class="home"><a href="../index.html" class="btn btn-light">Back to e-mail</a></div>
+        
     </header>
 
     <main>
-        <div class="wrapper">
-            
+        <div class="d-flex">
+            <div class="col-xl-3 stats">
+                <div class="border-white border-5 border h-100 p-3">
+                    <div class="title-stats">Stats</div>
+                    <div class="inner-stats">
+                        <!-- Average total score: 85 <br>
+                        Average player score: 85 <br>
+                        Most frequent number: 8 <br> -->
+                    </div>
+                </div>
+            </div>
+            <div class="the-game col-xl-9">
+                <!-- <div class="winners">
+                    Player 11 Won <br> High score 77
+                </div>
+                <div class="players">
+                    <div class="player">
+                        <div class="name-player">Player 1</div>
+                        <div class="score-player">Score 88</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                    </div>
+                    <div class="player">
+                        <div class="name-player">Player 1</div>
+                        <div class="score-player">Score 88</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                    </div><div class="player">
+                        <div class="name-player">Player 1</div>
+                        <div class="score-player">Score 88</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                    </div><div class="player">
+                        <div class="name-player">Player 1</div>
+                        <div class="score-player">Score 88</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                    </div><div class="player">
+                        <div class="name-player">Player 1</div>
+                        <div class="score-player">Score 88</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                    </div><div class="player">
+                        <div class="name-player">Player 1</div>
+                        <div class="score-player">Score 88</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                    </div><div class="player">
+                        <div class="name-player">Player 1</div>
+                        <div class="score-player">Score 88</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                    </div><div class="player">
+                        <div class="name-player">Player 1</div>
+                        <div class="score-player">Score 88</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                        <div class="dice-player">12</div>
+                    </div>
+                </div> -->
+            </div>
         </div>
     </main>
 
