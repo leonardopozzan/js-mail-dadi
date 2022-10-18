@@ -5,35 +5,40 @@
     box-sizing: border-box;
 }
 :root{
-    --color-1: #618685;
-    --color-2: #3dc4d3;
-    /* --color-2: #80ced6; */
-    --color-3: #fdf6a3;
-    --color-4: #d5f4e6;
-    --color-5: #ffd558;
-    --color-6: #fefbd8;
+    --color-sfondo-1: rgb(229, 228, 228);
+    --color-sfondo-2: rgb(229, 228, 228);
+    --color-titolo: black;
+    --color-bottone: black;
+    --color-stats: black;
+    --color-winners: black;
+    --color-player: #023e8a;
+    --color-score: grey;
+    --color-dice:black;
+    --color-testo-dice: rgb(219, 0, 0);
+    --color-testo: black;
 
 }
 
 /********************* Header **********************/
 header{
-    background-color: var(--color-1);
+    background-color: var(--color-sfondo-1);
     padding: 1rem;
-    color: white;
+    color: var(--color-testo);
     height: 200px;
 }
 header h1{
-    color: var(--color-5);
+    color: var(--color-titolo);
 }
 header .my-input{
     max-width: 900px;
     margin: auto;
 }
 header .btn-play{
-    background-color: var(--color-5);
+    background-color: var(--color-bottone);
     border: 0;
     padding: 0;
     border-radius: 10px;
+    color: white;
 }
 .home{
     position: absolute;
@@ -44,14 +49,14 @@ header .btn-play{
 .stats{
     font-size: 1.5rem;
     font-weight: bold;
-    background-color: var(--color-1);
-    color: white;
+    background-color: var(--color-sfondo-1);
+    color: var(--color-testo);
     padding: 0 1rem 1rem;
     height: calc(100vh - 200px);
 }
 .title-stats{
     font-size: 2.8rem;
-    color: var(--color-5);
+    color: var(--color-stats);
     margin-bottom: 2rem;
 }
 .inner-stats{
@@ -62,7 +67,7 @@ header .btn-play{
 /********************* Sezione del gioco **********************/
 .the-game{
     padding-top: 3rem;
-    background-color: var(--color-2);
+    background-color: var(--color-sfondo-2);
     height: calc(100vh - 200px);
     overflow: auto;
 }
@@ -71,7 +76,7 @@ header .btn-play{
     font-weight: bold;
     font-style: italic;
     text-align: center;
-    color: var(--color-3);
+    color: var(--color-winners);
 }
 .players{
     display: flex;
@@ -86,13 +91,13 @@ header .btn-play{
     font-weight: bold;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
-    color: var(--color-1)
+    color: var(--color-player)
 }
 .score-player{
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 2.5rem;
-    color: var(--color-3);
+    color: var(--color-score);
 }
 .dice-player{
     width: 60px;
@@ -100,8 +105,8 @@ header .btn-play{
     line-height: 50px;
     text-align: center;
     border-radius: 10px;
-    color: var(--color-4);
-    border: 5px solid var(--color-4);
+    color: var(--color-testo-dice);
+    border: 5px solid var(--color-dice);
     display: inline-block;
     font-weight: bold;
     font-size: 1.5rem;
